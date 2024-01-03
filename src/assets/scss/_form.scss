@@ -1,0 +1,180 @@
+// Default Input
+input {
+    outline: none;
+    border: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 0
+}
+// 1. Inputs
+input[type=password] {
+    @extend .p2;
+    @extend .text-gray-black;
+    @extend .radius-5;
+    // padding: 10px 15px 9px;
+    border: transparent;
+    outline: none;
+    &::placeholder {
+        @extend .text-gray;
+    }
+}
+
+// 2. Start Checkbox Styling
+.checkbox-form-input {
+    @extend .p2;
+    @extend .text-gray-black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    input[type=checkbox] {
+        appearance: none;
+        position: relative;
+        height: 15px;
+        width: 15px;
+        border: 1px solid $gray;
+        border-radius: 3px;
+        &:checked {
+            background: $light-green;
+            border: 1px solid transparent;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}
+
+// 3. Input Range
+input[type=range].range-input {
+    appearance: none;
+    width: 73px;
+    height: 4px;
+    cursor: pointer;
+    background: $gray-black;
+    border-radius: 4px;
+    transition: all ease-in-out .125s;
+    &:focus {
+        outline: none;
+    }
+    &::-webkit-slider-thumb {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        -webkit-appearance: none;
+        background: $white;
+        border: 1px solid $gray;
+        margin: -4px 0;
+    }
+}
+
+// Start Fluid Label
+.fluid-form-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .fluid-input,
+    .fluid-label {
+        transition: ease-in-out .25s all;
+    }
+    .fluid-password {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
+        // Fluid password input
+        .hide-original-input {
+            outline: none;
+            border: none;
+            flex: 1 0 0;
+        }
+    }
+    .fluid-input,
+    .fluid-password {
+        @extend .p2;
+        @extend .text-gray-black;
+        @extend .radius-5;
+        padding: 10px 15px 9px;
+        border: 1px solid $gray;
+        outline: none;
+        &::placeholder {
+            @extend .text-gray;
+            @extend .p2;
+            position: absolute;
+            padding: 0 5px;
+            left: 10px;
+            top: 10px;
+            cursor: text;
+        }
+    }
+    .fluid-input {
+        &::placeholder {
+            @extend .text-gray;
+        }
+        &:focus {
+            border: 1px solid $green-kejaksaan;
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+    .fluid-input.has-error {
+        border: 1px solid $red;
+        color: $red;
+        &:focus {
+            border: 1px solid $red;
+        }
+    }
+    .fluid-input.no-error {
+        border: 1px solid $green-kejaksaan;
+    }
+    .fluid-label {
+        @extend .p4;
+        @extend .bg-white;
+        @extend .text-green-kejaksaan;
+        position: absolute;
+        top: -7.5px;
+        left: 10px;
+        padding: 0 5px;
+        display: none;
+        cursor: default;
+    }
+    .fluid-label.has-error {
+        color: $red;
+    }
+    .label-error {
+        background-color: $red;
+        padding: 3px 10px;
+        border-radius: 3px;
+        width: max-content;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: $white;
+        position: absolute;
+        right: 0;
+        top: -11px;
+        p.error-text {
+            @extend .p4;
+        }
+    }
+}
+
+.fluid-input:focus~.fluid-label {
+    display: block;
+}

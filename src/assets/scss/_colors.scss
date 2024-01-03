@@ -1,0 +1,40 @@
+$black: #000000;
+$more-black: #101010;
+$less-black: #202020;
+$gray-black: #424242;
+$red: #FF2727;
+$red-darker: #B90F0F;
+$light-red: #FFC8C8;
+$orange: #FF9820;
+$yellow: #FAFF00;
+$yellow-crown: #FFD600;
+$light-yellow: #FFFDC8;
+$green-kejaksaan: #00923F;
+$light-green: #32BA7C;
+$green-name-chat: #35CD96;
+$green-chat: #E0FFC8;
+$link-blue: #24A0ED;
+$gray: #9B9999;
+$border-gray: #E9E9E9;
+$light-gray: #F3F3F3;
+$white: #FFFFFF;
+// Gradient Colors
+$gradient-button: linear-gradient($white 0%, #F4F4F4 100%);
+$colors: ( // Solid Colors
+"black":$black, "more-black":$more-black, "less-black":$less-black, "gray-black":$gray-black, "red":$red, "red-darker":$red-darker, "light-red":$light-red, "orange":$orange, "yellow":$yellow, "yellow-crown": $yellow-crown, "light-yellow":$light-yellow, "green-kejaksaan":$green-kejaksaan, "light-green":$light-green, "green-name-chat":$green-name-chat, "green-chat":$green-chat, "link-blue":$link-blue, "gray":$gray, "border-gray":$border-gray, "light-gray":$light-gray, "white":$white, // Gradient Colors
+"gradient-button":$gradient-button, );
+@each $name,
+$val in $colors {
+    // Text Colors
+    .text-#{$name} {
+        color: $val;
+    }
+    // Background Color
+    .bg-#{$name} {
+        background: $val;
+    }
+    // Border Color
+    .border-#{$name} {
+        border-color: $val !important;
+    }
+}

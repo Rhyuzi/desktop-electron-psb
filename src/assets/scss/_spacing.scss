@@ -1,0 +1,150 @@
+// All Values in px
+$size: 1px;
+$sizes: (
+    2: $size * 2,
+    3: $size * 3,
+    4: $size * 4,
+    5: $size * 5,
+    6: $size * 6,
+    7: $size * 7,
+    9: $size * 9,
+    10: $size * 10,
+    12: $size * 12,
+    13: $size * 13,
+    15: $size * 15,
+    16: $size * 16,
+    17: $size * 17,
+    20: $size * 20,
+    24: $size * 24,
+    25: $size * 25,
+    30: $size * 30,
+    32: $size * 32,
+    37: $size * 37,
+    40: $size * 40,
+    42: $size * 42,
+    50: $size * 50,
+    72: $size * 72,
+    74: $size * 74,
+    79: $size * 79,
+    92: $size * 92,
+);
+
+@each $val, $output in $sizes {
+    // Gap
+    .gap-#{$val} {
+        gap: $output !important;
+    }
+    // Margin
+    .m-#{$val} {
+        margin: $output;
+    }
+    .mx-#{$val} {
+        margin-right: $output;
+        margin-left: $output;
+    }
+    .my-#{$val} {
+        margin-top: $output;
+        margin-bottom: $output;
+    }
+    .mt-#{$val} {
+        margin-top: $output;
+    }
+    .mb-#{$val} {
+        margin-bottom: $output !important;
+    }
+    .ms-#{$val} {
+        margin-left: $output !important;
+    }
+    .me-#{$val} {
+        margin-right: $output;
+    }
+    // Negative margin
+    .m-n#{$val} {
+        margin: -$output;
+    }
+    .mx-n#{$val} {
+        margin-right: -$output;
+        margin-left: -$output;
+    }
+    .my-n#{$val} {
+        margin-top: -$output;
+        margin-bottom: -$output;
+    }
+    .mt-n#{$val} {
+        margin-top: -$output;
+    }
+    .mb-n#{$val} {
+        margin-bottom: -$output;
+    }
+    .ms-n#{$val} {
+        margin-left: -$output;
+    }
+    .me-n#{$val} {
+        margin-right: -$output;
+    }
+    // Padding
+    .p-#{$val} {
+        padding: $output !important;
+    }
+    .px-#{$val} {
+        padding-right: $output;
+        padding-left: $output;
+    }
+    .py-#{$val} {
+        padding-top: $output !important;
+        padding-bottom: $output !important;
+    }
+    .pt-#{$val} {
+        padding-top: $output !important;
+    }
+    .pb-#{$val} {
+        padding-bottom: $output;
+    }
+    .ps-#{$val} {
+        padding-left: $output;
+    }
+    .pe-#{$val} {
+        padding-right: $output;
+    }
+    // Negative padding
+    .p-n#{$val} {
+        padding: -$output;
+    }
+    .px-n#{$val} {
+        padding-right: -$output;
+        padding-left: -$output;
+    }
+    .py-n#{$val} {
+        padding-top: -$output 0;
+        padding-bottom: -$output 0;
+    }
+    .pt-n#{$val} {
+        padding-top: -$output;
+    }
+    .pb-n#{$val} {
+        padding-bottom: -$output;
+    }
+    .ps-n#{$val} {
+        padding-left: -$output;
+    }
+    .pe-n#{$val} {
+        padding-right: -$output;
+    }
+    // Border Radius
+    .radius-#{$val} {
+        border-radius: $output;
+    }
+    // Position
+    .left-#{$val} {
+        left: $output;
+    }
+    .right-#{$val} {
+        right: $output;
+    }
+    .top-#{$val} {
+        top: $output;
+    }
+    .bottom-#{$val} {
+        bottom: $output;
+    }
+}

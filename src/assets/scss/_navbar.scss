@@ -1,0 +1,104 @@
+// Navbar Bottom Meeting
+.nav-menu-icon i, .nav-menu-icon svg {
+    transition: all ease-in-out .125s;
+    cursor: pointer;
+    &:hover {
+        color: $light-green;
+    }
+}
+.nav-menu-icon.active i, .nav-menu-icon.active svg {
+    color: $light-green;
+    &:hover {
+        color: $red;
+    }
+}
+.more-option, .share-option {
+    position: absolute;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .opt-menu {
+        color: $gray;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 20px;
+        .menu-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-left: -10px;
+            width: 100%;
+        }
+        &:hover {
+            font-weight: 700;
+            color: $gray-black;
+        }
+    }
+    .opt-menu.raised {
+        color: $white;
+        margin: -5px -20px;
+        border-radius: 3px;
+        padding: 5px 20px;
+        background-color: $light-green;
+        &:hover {
+            background-color: $red;
+        }
+    }
+}
+.more-option {
+    bottom: 43px;
+    right: 8px;
+    width: 192px;
+}
+.share-option {
+    bottom: 50px;
+    left: 180px;
+    width: 203px;
+}
+
+.circle-icon-group {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    .circle-icon-wrap,
+    .circle-icon-wrap.active,
+    .circle-icon-wrap.phone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all ease-in-out .125s;
+    }
+    .circle-icon-wrap {
+        background-color: $white;
+        color: $gray-black;
+        &:hover {
+            background-color: $light-green;
+            color: $white;
+        }
+    }
+    .circle-icon-wrap.active{
+        background-color: $light-green;
+        color: $white;
+        &:hover {
+            background-color: $red;
+        }
+    }
+    .circle-icon-wrap.phone {
+        transform: rotate(135deg);
+        background-color: $red;
+        &:hover {
+            background-color: $red-darker;
+        }
+    }
+}
