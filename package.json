@@ -19,6 +19,7 @@
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vue3-easy-data-table": "^1.5.47",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {

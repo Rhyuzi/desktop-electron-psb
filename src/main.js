@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import './assets/scss/kejaksaan.scss'
+import './assets/scss/pandu.scss'
 import router from './router'
 import store from './store'
 import '@fortawesome/fontawesome-free/js/all.js';
