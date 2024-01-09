@@ -45,21 +45,24 @@ import Pelanggan from '../components/master/Pelanggan.vue';
       toggleSidebar() {
         if (this.sidebarActive) {
           // sidebar
-            var element = document.getElementById("sidebarCollapse")
-            var elementContent = document.getElementById("content")
-            var sidebar = document.getElementById("sidebar")
+            const element = document.getElementById("sidebarCollapse")
+            const elementContent = document.getElementById("content")
+            const sidebar = document.getElementById("sidebar")
             element.classList.remove("toggle-bar")
             element.classList.add('toggle-bar-minimize')
 
             elementContent.classList.remove("margin-content")
             elementContent.classList.add('margin-content-minimize')
             sidebar.classList.remove("width-235")
+            sidebar.classList.remove("overflow-auto")
         }else {
-            var element = document.getElementById("sidebarCollapse")
-            var elementContent = document.getElementById("content")
+            const element = document.getElementById("sidebarCollapse")
+            const elementContent = document.getElementById("content")
+            const sidebar = document.getElementById("sidebar")
             element.classList.remove("toggle-bar-minimize")
             element.classList.add('toggle-bar')
 
+            sidebar.classList.add("overflow-auto")
             elementContent.classList.remove("margin-content-minimize")
             elementContent.classList.add('margin-content')
             

@@ -1,6 +1,7 @@
+import API from '../../api'
 const initialState = () => {
     return {
-        participants: []
+        pelanggan: []
     }
 }
 
@@ -11,21 +12,26 @@ export default {
         PUSH: function (state, [key, value]) {
             state[key].push(value)
         },
-        SET: (state, [key, value]) => state[key] = value,
+        SET(state, [key, value]) {
+            state[key] = value
+        },
         FILTER: (state, [key, value]) => state[key] = state[key].filter(item => item.sipAccount != value),
         DELETE: (state, [key, value]) => state[key].splice(state[key].findIndex(item => item.sipAccount == value), 1),
         RESET: (state) => Object.assign(state, initialState())
     },
     getters: {
-        getParticipants: (state) => state.participants,
+        getPelanggan: (state) => state.pelanggan,
     },
     actions: {
-        hasLeaveMeeting: function ({commit}, payload) {
-            commit('DELETE', ['participants', payload])
-        },
-        setParticipants: function({commit}, payload) {
-            commit('FILTER', ['participants', payload.sipAccount])
-            commit('PUSH', ['participants', payload])
+        getPelanggan: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.get_pelanggan(payload)
+                if (res.data.error = false) {
+                    commit('SET', ['pelanggan', res.data.data])
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
         },
     },
 }

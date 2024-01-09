@@ -482,6 +482,9 @@ form {
 .list-master {
     transition: 0.5s;
 }
+.overflow-auto {
+    overflow: auto;
+}
 
 #sidebar {
     background-color: #34495E;
@@ -490,7 +493,7 @@ form {
     left: -250px;
     transition: all 0.3s;
     z-index: 6;
-    overflow: auto;
+    // overflo
   }
 .width-235 {
     width: 235px;
@@ -621,6 +624,22 @@ form {
     display: flex;
     flex-direction: column;
 }
+
+.popup-tambah-pelanggan {
+    position: absolute; /* Change from absolute to relative */
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 62%;
+    width: 35%;
+    height: 85%;
+    max-height: 85%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 .margin-menu-pelanggan {
     margin: 2px 24px;
 }
@@ -665,4 +684,20 @@ form {
 }
 .title-popup-detail {
     margin: 7px;
+}
+
+.font-size-13 {
+    font-size: 13px;
+}
+.margin-4 {
+    margin: 4px;
+}
+.search-pelanggan {
+    margin: 16px 0 16px;
+}
+.height-38 {
+    height: 38px;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
 }

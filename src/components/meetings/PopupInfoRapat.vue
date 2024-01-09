@@ -26,53 +26,54 @@
 					<table class="table-detail-pelanggan">
 						<tr>
 							<td class="font-bold">Nomor</td>
-							<td>38939282939</td>
+							<td>{{ data.CustNo }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Nama</td>
-							<td>Azi</td>
+							<td>{{ data.CustName }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Alamat</td>
-							<td>Jln.Lodaya no 75 Buah batu</td>
+							<td>{{ data.CustAddr !== null ? data.CustAddr : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Telpon/Fax</td>
-							<td>08925712581</td>
+							<td>{{ data.CustTelp !== null ? data.CustTelp : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Kategori</td>
-							<td>Bajuu</td>
+							<td>{{ data.CC_Nama !== null ? data.CC_Nama : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Jenis Usaha</td>
-							<td>Bajuuu</td>
+							<td>{{ data.CB_Nama !== null ? data.CB_Nama : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Contact person</td>
-							<td>0893269393</td>
+							<td>{{ data.PegawaiNama !== null ? data.PegawaiNama : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Jabatan</td>
-							<td>0893269393</td>
+							<!-- <td>{{ data.PegawaiNama !== null ? data.PegawaiNama : '-' }}</td> -->
+							<td>{{  jabatan(data.PegawaiType) }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Telpon</td>
-							<td>0893269393</td>
+							<td>{{ data.PegawaiNoTelp !== null ? data.PegawaiNoTelp : '-' }}</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td class="font-bold">Komisi(%)</td>
 							<td>0893269393</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td class="font-bold">Catatan</td>
-							<td>0893269393</td>
+							<td>{{ data.CustMemo !== null ? data.CustMemo : '-' }}</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td class="font-bold">Area Default</td>
 							<td>0893269393</td>
-						</tr>
-						<tr>
+						</tr> -->
+						<!-- <tr>
 							<td>
 								<input type="checkbox" name="Senin" id="senin">
 								<label class="label-weekly" for="senin"> Senin</label>
@@ -95,7 +96,23 @@
 								<input type="checkbox" name="Minggu" id="minggu">
 								<label class="label-weekly" for="minggu"> Minggu</label>
 							</td>
-						</tr>
+						</tr> -->
+						<div>
+							<input type="checkbox" name="Senin" id="senin">
+							<label class="label-weekly" for="senin"> Senin</label>
+							<input type="checkbox" name="Selasa" id="selasa">
+							<label class="label-weekly" for="selasa"> Selasa</label>
+							<input type="checkbox" name="Rabu" id="rabu">
+							<label class="label-weekly" for="rabu"> Rabu</label>
+							<input type="checkbox" name="Kamis" id="kamis">
+							<label class="label-weekly" for="kamis"> Kamis</label>
+							<input type="checkbox" name="Jumat" id="jumat">
+							<label class="label-weekly" for="jumat"> Jumat</label>
+							<input type="checkbox" name="Sabtu" id="sabtu">
+							<label class="label-weekly" for="sabtu"> Sabtu</label>
+							<input type="checkbox" name="Minggu" id="minggu">
+							<label class="label-weekly" for="minggu"> Minggu</label>
+						</div>
 					</table>
 				</div>
 			</div>
@@ -115,7 +132,8 @@ export default {
 			beHostForm: false,
             v$: useValidate(),
 			hostCode: "",
-			clickMenu: 'informasi-umum'
+			clickMenu: 'informasi-umum',
+			data: {}
 		}
 	},
 	validation() {
@@ -124,6 +142,10 @@ export default {
 				numeric: helpers.withMessage("Kode host harus berupa angka", numeric)
 			},
 		}
+	},
+	mounted(){
+		console.debug('dataaaa child',this.$parent.dataClicked)
+		this.data = this.$parent.dataClicked
 	},
 	methods: {
 		onClickMenu(data){
@@ -136,6 +158,21 @@ export default {
 			} else if (data == 'eksport-data'){
 				this.clickMenu = 'eksport-data'
 				console.debug(this.clickMenu)
+			}
+		},
+		jabatan(type){
+			switch (type) {
+				case '0':
+					return 'Karyawan'
+					break;
+				case '1':
+					return 'Vendor'
+					break;
+				case '2':
+					return 'Pelanggan'
+					break;
+				default:
+					break;
 			}
 		}
 	}

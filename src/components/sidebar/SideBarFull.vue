@@ -1,5 +1,5 @@
 <template>
-      <nav id="sidebar" class="width-235" :class="{ 'active': sidebarActive }">
+      <nav id="sidebar" class="width-235 overflow-auto" :class="{ 'active': sidebarActive }">
         <div class="sidebar-header">
           <h3 class="text-white">Your Sidebar Title</h3>
         </div>
