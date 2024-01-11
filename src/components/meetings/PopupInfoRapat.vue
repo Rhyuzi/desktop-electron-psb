@@ -26,23 +26,23 @@
 					<table class="table-detail-pelanggan">
 						<tr>
 							<td class="font-bold">Nomor</td>
-							<td>{{ data.CustNo }}</td>
+							<td>{{ data.CustomerNo }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Nama</td>
-							<td>{{ data.CustName }}</td>
+							<td>{{ data.CustomerName }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Alamat</td>
-							<td>{{ data.CustAddr !== null ? data.CustAddr : '-' }}</td>
+							<td>{{ data.CustomerAddr1 !== null ? data.CustomerAddr1 : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Telpon/Fax</td>
-							<td>{{ data.CustTelp !== null ? data.CustTelp : '-' }}</td>
+							<td>{{ data.CustomerTelp !== null ? data.CustomerTelp : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Kategori</td>
-							<td>{{ data.CC_Nama !== null ? data.CC_Nama : '-' }}</td>
+							<td>{{ data.CategoryName !== null ? data.CategoryName : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Jenis Usaha</td>
@@ -50,12 +50,12 @@
 						</tr>
 						<tr>
 							<td class="font-bold">Contact person</td>
-							<td>{{ data.PegawaiNama !== null ? data.PegawaiNama : '-' }}</td>
+							<td>{{ data.CustomerSales !== null ? data.CustomerSales : '-' }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Jabatan</td>
 							<!-- <td>{{ data.PegawaiNama !== null ? data.PegawaiNama : '-' }}</td> -->
-							<td>{{  jabatan(data.PegawaiType) }}</td>
+							<td>{{  data.CustomerPersonJabat1 }}</td>
 						</tr>
 						<tr>
 							<td class="font-bold">Telpon</td>
@@ -67,7 +67,7 @@
 						</tr> -->
 						<tr>
 							<td class="font-bold">Catatan</td>
-							<td>{{ data.CustMemo !== null ? data.CustMemo : '-' }}</td>
+							<td>{{ data.CustomerMemo !== null ? data.CustomerMemo : '-' }}</td>
 						</tr>
 						<!-- <tr>
 							<td class="font-bold">Area Default</td>

@@ -6,7 +6,7 @@
                 <h1 class="fw-bold name-app">PSB</h1>
                 <p class="text-muted pb-4 font-14">Desktop Menu 7 PSB</p>
                 <!-- <a href="#" class="w-100 btn btn-landing-signin">Masuk</a> -->
-                <router-link class="w-100 btn btn-landing-signin" to="/pilihserver">Masuk</router-link>
+                <router-link class="w-100 btn btn-landing-signin" to="/login">Login</router-link>
             </div>
             <div class="text-center fixed-bottom p2">
                 <div class="text-center p-3 text-secondary">

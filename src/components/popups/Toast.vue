@@ -1,6 +1,6 @@
 <template>
-    <div class="w-100 d-flex justify-content-center">
-        <div class="p2 text-white py-5 px-15" :class="color" id="toast">{{ text }}</div>
+    <div class="w-100 d-flex justify-content-center z-index">
+        <div class="p2 text-white py-5 px-15 z-index" :class="color" id="toast">{{ text }}</div>
     </div>
 </template>
 
@@ -44,7 +44,7 @@ export default {
     text-align: center;
     border-radius: 10px;
     position: fixed;
-    z-index: 2;
+    z-index: 46;
     bottom: 85px;
 }
 
@@ -96,5 +96,8 @@ export default {
         bottom: 70px;
         opacity: 0;
     }
+}
+.z-index {
+    z-index: 46;
 }
 </style>

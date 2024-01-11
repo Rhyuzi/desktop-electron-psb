@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import GabungRapat from '../views/GabungRapat.vue'
-import PilihServer from '../views/Dashboard.vue'
+import Login from '../views/Login.vue'
+import Dashboard from '../views/Dashboard.vue'
 import Loading from '../components/meetings/PreJoinLoad'
 
 const routes = [{
@@ -10,14 +10,14 @@ const routes = [{
             import ('../views/Landing.vue')
     },
     {
-        path: '/gabungrapat',
-        name: 'GabungRapat',
-        component: GabungRapat
+        path: '/login',
+        name: 'Login',
+        component: Login
     },
     {
-        path: '/pilihserver',
-        name: 'PilihServer',
-        component: PilihServer
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: Dashboard
     },
     {
         path: '/ruangrapat',

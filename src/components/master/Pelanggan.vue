@@ -23,12 +23,12 @@
         alternating
         show-index
         :search-value="search"
-        search-field="CustName"
+        search-field="CustomerName"
         >
         <template #item-operation="{ item }">
             <div>
                 <button @click="handleDetailClick" class="btn btn-primary font-size-13 margin-4"><Icon icon="bx:detail" />Detail</button>
-                <button class="btn btn-primary font-size-13 margin-4"><Icon icon="tabler:edit" />Edit</button>
+                <button @click="handleEditClick" class="btn btn-primary font-size-13 margin-4"><Icon icon="tabler:edit" />Edit</button>
             </div>
         </template>
         <template #loading>
@@ -44,6 +44,9 @@
 
     <PopupInfoRapat v-if="isPopupShow"/>
     <PopupTambahPelanggan v-if="onCreate" />
+    <PopupEditPelanggan v-if="onEdit"/>
+    
+    <!-- <PreJoinLoad/> -->
     <!-- <div class="popup-data-pelanggan">
       asdasdas
     </div> -->
@@ -55,6 +58,8 @@ import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
 import PopupInfoRapat from '../meetings/PopupInfoRapat.vue';
 import PopupTambahPelanggan from '../popups/master_pelanggan/PopupTambahPelanggan.vue';
+import PreJoinLoad from '../meetings/PreJoinLoad.vue';
+import PopupEditPelanggan from '../popups/master_pelanggan/PopupEditPelanggan.vue';
 import { mapGetters } from 'vuex';
 
   export default {
@@ -62,7 +67,9 @@ import { mapGetters } from 'vuex';
       Icon,
       Vue3EasyDataTable,
       PopupInfoRapat,
-      PopupTambahPelanggan
+      PopupTambahPelanggan,
+      PreJoinLoad,
+      PopupEditPelanggan
   },
     computed: {
       ...mapGetters({
@@ -71,6 +78,7 @@ import { mapGetters } from 'vuex';
     },
     data() {
       return {
+        onEdit: false,
         search: '',
         dataClicked: {},
         sidebarActive: true,
@@ -78,8 +86,8 @@ import { mapGetters } from 'vuex';
         onCreate: false,
         dataPelanggan: [],
         headers: [
-            { text: "CustomerNo", value: "CustNo" },
-            { text: "CustomerName", value: "CustName"},
+            { text: "CustomerNo", value: "CustomerNo" },
+            { text: "CustomerName", value: "CustomerName"},
             { text: "Operasi", value: "operation"}
             ],
         items: [
@@ -99,7 +107,7 @@ import { mapGetters } from 'vuex';
         this.onCreate = true
       },
       
-       async getPelanggan(){
+      async getPelanggan(){
         const res =  await this.$store.dispatch('pelanggan/getPelanggan',{key: 'psb75'})
         this.dataPelanggan = res.data
         console.debug('dataaaa',res)
@@ -114,9 +122,15 @@ import { mapGetters } from 'vuex';
           this.isPopupShow = true
         }, 100);
       },
+      handleEditClick(){
+        setTimeout(() => {
+          this.onEdit = true
+        }, 100);
+      },
       handleSearchChange() {
         this.search = this.search.toUpperCase();
       },
+      
     },
   };
   </script>

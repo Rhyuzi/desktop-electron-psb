@@ -483,7 +483,8 @@ form {
     transition: 0.5s;
 }
 .overflow-auto {
-    overflow: auto;
+    overflow-x: hidden !important; /* Hide horizontal scrollbar */
+    overflow-y: auto !important;
 }
 
 #sidebar {
@@ -632,7 +633,7 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
     max-width: 62%;
-    width: 35%;
+    width: 37%;
     height: 85%;
     max-height: 85%;
     overflow: hidden;
@@ -700,4 +701,13 @@ form {
 }
 .margin-bottom-20 {
     margin-bottom: 20px;
+}
+.text-danger {
+    color: red !important;
+}
+.width-65perc {
+    width: 80%;
+}
+.width-95 {
+    width: 45%;
 }

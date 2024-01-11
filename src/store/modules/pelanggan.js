@@ -33,5 +33,59 @@ export default {
                resolve(res.data)
             })
         },
+        getLocation: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.get_location(payload)
+                if (res.data.error = false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
+        getBussinesList: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.get_pelanggan_bisnis(payload)
+                if (res.data.error = false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
+        getSalesList: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.get_pelanggan_sales(payload)
+                if (res.data.error = false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
+        getStatusList: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.get_pelanggan_status(payload)
+                if (res.data.error = false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
+        addCustomer: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.add_customer(payload)
+                if (res.data.error = false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
+        updateCustomer: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.update_customer(payload)
+                if (res.data.error = false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        }
     },
 }
