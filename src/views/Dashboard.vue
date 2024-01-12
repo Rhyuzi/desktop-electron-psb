@@ -16,7 +16,8 @@
             <i class="fas fa-bars"></i> </button>
         </div>
         <div class="fixed-content">
-          <Pelanggan />
+          <Pelanggan v-if="toPelanggan"/>
+          <Kota v-if="toKota"/>
         </div>
       </div>
     </div>
@@ -27,6 +28,7 @@ import { Icon } from '@iconify/vue';
 import SideBarFull from '../components/sidebar/SideBarFull.vue'
 import SideBarHalf from '../components/sidebar/SideBarHalf.vue'
 import Pelanggan from '../components/master/Pelanggan.vue';
+import Kota from '../components/master/Kota.vue';
 
   export default {
     components: {
@@ -34,11 +36,13 @@ import Pelanggan from '../components/master/Pelanggan.vue';
       SideBarFull,
       SideBarHalf,
       Pelanggan,
+      Kota
 	},
     data() {
       return {
         sidebarActive: true,
-        
+        toPelanggan: false,
+        toKota: true
       };
     },
     methods: {

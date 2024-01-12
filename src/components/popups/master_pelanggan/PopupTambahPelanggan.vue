@@ -68,7 +68,7 @@
                     
                     <div class="fluid-form-input margin-top-10 width-65perc">
                         <select v-model="state.kategori" id="Kategori" placeholder="Kategori" min="0" class="fluid-input" :class="state.kategori == '' ? (v$.state.kategori.$error ? 'has-error' : '') : (v$.state.kategori.$error ? 'has-error' : 'no-error')">
-                            <option value="default">--Pilih Kategori--</option>
+                            <option value="">--Pilih Kategori--</option>
                             <option v-for="s in statList" :value="s.CategoryID">{{ s.CategoryName }}</option>
                         </select>
                         <label id="kategori" for="katebori" class="fluid-label" :class="state.kategori == '' ? (v$.state.kategori.$error ? 'has-error' : 'no-error') : (v$.state.kategori.$error ? 'has-error d-block' : 'no-error d-block')">Kategori</label>
@@ -135,7 +135,7 @@
 
                     <div class="fluid-form-input margin-top-10 width-65perc">
                             <select v-model="state.bisnis" id="bisnis" placeholder="Jenis Usaha" min="0" class="fluid-input" :class="state.bisnis == '' ? (v$.state.bisnis.$error ? 'has-error' : '') : (v$.state.bisnis.$error ? 'has-error' : 'no-error')">
-                                <option value="default">--Pilih Kategori--</option>
+                                <option value="">--Pilih Bisnis--</option>
                                 <option v-for="s in statList" :value="s.CategoryID">{{ s.CategoryName }}</option>
                             </select>
                             <label id="bisnis" for="bisnis" class="fluid-label" :class="state.bisnis == '' ? (v$.state.bisnis.$error ? 'has-error' : 'no-error') : (v$.state.bisnis.$error ? 'has-error d-block' : 'no-error d-block')">Jenis Usaha</label>
@@ -164,41 +164,41 @@
                         <small v-if="v$.state.lokasi.$error" class="form-text text-muted text-danger">{{ v$.state.lokasi.$errors[0].$message }}</small>
                     </div> -->
                     <div class="fluid-form-input margin-top-10 width-65perc">
-                        <input type="text" v-model="state.nohp" id="jabatan" placeholder="Jabatan" min="0" class="fluid-input" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : '') : (v$.state.nohp.$error ? 'has-error' : 'no-error')">
-                        <label id="jabatan" for="jabatan" class="fluid-label" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : 'no-error') : (v$.state.nohp.$error ? 'has-error d-block' : 'no-error d-block')">Jabatan</label>
-                        <div v-if="v$.state.nohp.$error" class="label-error">
+                        <input type="text" v-model="state.jabatan" id="jabatan" placeholder="Jabatan" min="0" class="fluid-input" :class="state.jabatan == '' ? (v$.state.jabatan.$error ? 'has-error' : '') : (v$.state.jabatan.$error ? 'has-error' : 'no-error')">
+                        <label id="jabatan" for="jabatan" class="fluid-label" :class="state.jabatan == '' ? (v$.state.jabatan.$error ? 'has-error' : 'no-error') : (v$.state.jabatan.$error ? 'has-error d-block' : 'no-error d-block')">Jabatan</label>
+                        <div v-if="v$.state.jabatan.$error" class="label-error">
                             <Icon icon="ep:warning-filled" height="13" />
-                            <p class="error-text">{{ v$.state.nohp.$errors[0].$message }}</p>
+                            <p class="error-text">{{ v$.state.jabatan.$errors[0].$message }}</p>
                         </div>
                     </div>
 
                     <div class="display-flex">
                     
                         <div class="fluid-form-input margin-top-10 width-95">
-                            <input type="text" v-model="state.nohp" id="telpon" placeholder="Telpon" min="0" class="fluid-input" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : '') : (v$.state.nohp.$error ? 'has-error' : 'no-error')">
-                            <label id="telpon" for="telpon" class="fluid-label" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : 'no-error') : (v$.state.nohp.$error ? 'has-error d-block' : 'no-error d-block')">Telpon</label>
-                            <div v-if="v$.state.nohp.$error" class="label-error">
+                            <input type="text" v-model="state.telpon" id="telpon" placeholder="Telpon" min="0" class="fluid-input" :class="state.telpon == '' ? (v$.state.telpon.$error ? 'has-error' : '') : (v$.state.telpon.$error ? 'has-error' : 'no-error')">
+                            <label id="telpon" for="telpon" class="fluid-label" :class="state.telpon == '' ? (v$.state.telpon.$error ? 'has-error' : 'no-error') : (v$.state.telpon.$error ? 'has-error d-block' : 'no-error d-block')">Telpon</label>
+                            <div v-if="v$.state.telpon.$error" class="label-error">
                                 <Icon icon="ep:warning-filled" height="13" />
-                                <p class="error-text">{{ v$.state.nohp.$errors[0].$message }}</p>
+                                <p class="error-text">{{ v$.state.telpon.$errors[0].$message }}</p>
                             </div>
                         </div>
 
                         <div class="fluid-form-input margin-top-10 width-95">
-                            <input type="text" v-model="state.nohp" id="komisi" placeholder="Komisi(%)" min="0" class="fluid-input" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : '') : (v$.state.nohp.$error ? 'has-error' : 'no-error')">
-                            <label id="komisi" for="komisi" class="fluid-label" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : 'no-error') : (v$.state.nohp.$error ? 'has-error d-block' : 'no-error d-block')">Komisi (%)</label>
-                            <div v-if="v$.state.nohp.$error" class="label-error">
+                            <input type="text" v-model="state.komisi" id="komisi" placeholder="Komisi(%)" min="0" class="fluid-input" :class="state.komisi == '' ? (v$.state.komisi.$error ? 'has-error' : '') : (v$.state.komisi.$error ? 'has-error' : 'no-error')">
+                            <label id="komisi" for="komisi" class="fluid-label" :class="state.komisi == '' ? (v$.state.komisi.$error ? 'has-error' : 'no-error') : (v$.state.komisi.$error ? 'has-error d-block' : 'no-error d-block')">Komisi (%)</label>
+                            <div v-if="v$.state.komisi.$error" class="label-error">
                                 <Icon icon="ep:warning-filled" height="13" />
-                                <p class="error-text">{{ v$.state.nohp.$errors[0].$message }}</p>
+                                <p class="error-text">{{ v$.state.komisi.$errors[0].$message }}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="fluid-form-input margin-top-10 width-65perc">
-                        <input type="text" v-model="state.nohp" id="catatan" placeholder="Catatan" min="0" class="fluid-input" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : '') : (v$.state.nohp.$error ? 'has-error' : 'no-error')">
-                        <label id="catatan" for="catatan" class="fluid-label" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : 'no-error') : (v$.state.nohp.$error ? 'has-error d-block' : 'no-error d-block')">Catatan</label>
-                        <div v-if="v$.state.nohp.$error" class="label-error">
+                        <input type="text" v-model="state.catatan" id="catatan" placeholder="Catatan" min="0" class="fluid-input" :class="state.catatan == '' ? (v$.state.catatan.$error ? 'has-error' : '') : (v$.state.catatan.$error ? 'has-error' : 'no-error')">
+                        <label id="catatan" for="catatan" class="fluid-label" :class="state.catatan == '' ? (v$.state.catatan.$error ? 'has-error' : 'no-error') : (v$.state.catatan.$error ? 'has-error d-block' : 'no-error d-block')">Catatan</label>
+                        <div v-if="v$.state.catatan.$error" class="label-error">
                             <Icon icon="ep:warning-filled" height="13" />
-                            <p class="error-text">{{ v$.state.nohp.$errors[0].$message }}</p>
+                            <p class="error-text">{{ v$.state.catatan.$errors[0].$message }}</p>
                         </div>
                     </div>
 
@@ -275,10 +275,10 @@ export default {
                 accno: '',
                 nama: '',
                 email: '',
-                nohp: 'default',
+                nohp: '089',
                 alamat: '',
-                kategori: 'default',
-                bisnis: 'default',
+                kategori: '',
+                bisnis: '',
                 sales: '',
                 lokasi: '',
                 grup:'',
@@ -322,7 +322,35 @@ export default {
                 },
                 lokasi: {
                     required: helpers.withMessage("Lokasi harus diisi", required),
+                },
+                grup: {
+                    required: helpers.withMessage("Grup harus diisi", required),
+                },
+                oto: {
+                    required: helpers.withMessage("Hitung Oto harus diisi", required),
+                },
+                conperson: {
+                    required: helpers.withMessage("Contact Person harus diisi", required),
+                },
+                jabatan: {
+                    required: helpers.withMessage("Jabatan harus diisi", required),
+                },
+                telpon: {
+                    required: helpers.withMessage("Telepon harus diisi", required),
+                },
+                komisi: {
+                    required: helpers.withMessage("Komisi harus diisi", required),
+                },
+                catatan: {
+                    required: helpers.withMessage("Catatan harus diisi", required),
+                },
+                areadefault: {
+                    required: helpers.withMessage("Area harus diisi", required),
+                },
+                modadefault: {
+                    required: helpers.withMessage("Moda harus diisi", required),
                 }
+                
             }
 		}
 	},

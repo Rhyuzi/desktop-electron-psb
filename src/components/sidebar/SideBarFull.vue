@@ -15,7 +15,7 @@
                 <ul v-if="showListMaster" class="list-unstyled components margin-top-24 list-master margin-left-21">
                     <li @click="toPelanggan" class="text-white margin-top-10 margin-left-12 font-size-10"><i class="fa fa-user"></i><a> Pelanggan</a></li>
                     <li class="text-white margin-top-10 margin-left-12 font-size-10"><i class="fa fa-credit-card"></i><a> Harga Umum</a></li>
-                    <li class="text-white margin-top-10 margin-left-12 font-size-10"><i class="fa fa-building"></i><a> Daftar Kota</a></li>
+                    <li @click="toKota" class="text-white margin-top-10 margin-left-12 font-size-10"><i class="fa fa-building"></i><a> Daftar Kota</a></li>
                     <li class="text-white margin-top-10 margin-left-12 font-size-10"><i class="fa fa-map-pin"></i><a> Daftar Data Tujuan</a></li>
                     <li class="text-white margin-top-10 margin-left-12 font-size-10"><i class="fa fa-user-secret"></i><a> Daftar Pegawai</a></li>
                     <li class="text-white margin-top-10 margin-left-12 font-size-10"><Icon icon="mdi:chart-line" /><a> Chart of Account</a></li>
@@ -189,7 +189,13 @@
       toPelanggan() {
         const currentQuery = this.$route.query;
         this.$router.push({ query: { ...currentQuery, test: 'pelanggan' } });
+        this.$parent.toPelanggan = true
+        this.$parent.toKota = false
       },
+      toKota(){
+        this.$parent.toPelanggan = false
+        this.$parent.toKota = true
+      }
     },
   };
   </script>

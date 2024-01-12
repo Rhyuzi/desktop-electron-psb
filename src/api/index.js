@@ -111,6 +111,19 @@ export default {
         return result;
 
     },
+    get_kota: async function (payload) {
+        //DEFINE API ENDPOINT
+        let endpoint = 'siapx/desktop-new/get_kota.php';
+        let method = 'post';
+    
+        //SEND API
+        endpoint = endpoint;
+        let result = await send_api(endpoint, method, payload);
+    
+        //RESULT PROCESS
+        return result;
+
+    },
     login: async function (payload) {
         //DEFINE API ENDPOINT
         let endpoint = 'siapx/desktop-new/login.php';
