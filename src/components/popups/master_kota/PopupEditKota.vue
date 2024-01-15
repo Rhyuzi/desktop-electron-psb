@@ -31,14 +31,14 @@
                     </div>
                     
                     <div class="display-flex">
-                        <!-- <div class="fluid-form-input margin-top-10 width-95">
+                        <div class="fluid-form-input margin-top-10 width-95">
                             <input type="text" v-model="state.email" id="email" placeholder="Email" min="0" class="fluid-input" :class="state.email == '' ? (v$.state.email.$error ? 'has-error' : '') : (v$.state.email.$error ? 'has-error' : 'no-error')">
                             <label id="email" for="email" class="fluid-label" :class="state.email == '' ? (v$.state.email.$error ? 'has-error' : 'no-error') : (v$.state.email.$error ? 'has-error d-block' : 'no-error d-block')">Email</label>
                             <div v-if="v$.state.email.$error" class="label-error">
                                 <Icon icon="ep:warning-filled" height="13" />
                                 <p class="error-text">{{ v$.state.email.$errors[0].$message }}</p>
                             </div>
-                        </div> -->
+                        </div>
     
                         <div class="fluid-form-input margin-top-10 width-95">
                             <input type="text" v-model="state.nohp" id="nohp" placeholder="No HP" min="0" class="fluid-input" :class="state.nohp == '' ? (v$.state.nohp.$error ? 'has-error' : '') : (v$.state.nohp.$error ? 'has-error' : 'no-error')">
@@ -114,7 +114,7 @@
                         <small v-if="v$.state.bisnis.$error" class="form-text text-muted text-danger">{{ v$.state.bisnis.$errors[0].$message }}</small>
                     </div> -->
 
-                    <!-- <div class="fluid-form-input margin-top-10 width-65perc">
+                    <div class="fluid-form-input margin-top-10 width-65perc">
                             <select v-model="state.bisnis" id="bisnis" placeholder="Jenis Usaha" min="0" class="fluid-input" :class="state.bisnis == '' ? (v$.state.bisnis.$error ? 'has-error' : '') : (v$.state.bisnis.$error ? 'has-error' : 'no-error')">
                                 <option value="">--Pilih Bisnis--</option>
                                 <option v-for="s in statList" :value="s.CategoryID">{{ s.CategoryName }}</option>
@@ -124,7 +124,7 @@
                                 <Icon icon="ep:warning-filled" height="13" />
                                 <p class="error-text">{{ v$.state.bisnis.$errors[0].$message }}</p>
                             </div>
-                        </div> -->
+                        </div>
                     
                     <hr>
                     <div class="fluid-form-input margin-top-10 width-65perc">
@@ -188,10 +188,7 @@
                     <div class="display-flex margin-top-10">
 
                         <div class="fluid-form-input margin-top-10 width-95">
-                            <select v-model="state.areadefault" id="areadefault" placeholder="Area Default" min="0" class="fluid-input" :class="state.areadefault == '' ? (v$.state.areadefault.$error ? 'has-error' : '') : (v$.state.areadefault.$error ? 'has-error' : 'no-error')">
-                                <option value="default">--Pilih--</option>
-                                <option v-for="a in areaDef" :value="a.PickupAreaKode">{{ a.PickupAreaKode }}</option>
-                            </select>
+                            <input type="text" v-model="state.areadefault" id="areadefault" placeholder="Area Default" min="0" class="fluid-input" :class="state.areadefault == '' ? (v$.state.areadefault.$error ? 'has-error' : '') : (v$.state.areadefault.$error ? 'has-error' : 'no-error')">
                             <label id="areadefault" for="areadefault" class="fluid-label" :class="state.areadefault == '' ? (v$.state.areadefault.$error ? 'has-error' : 'no-error') : (v$.state.areadefault.$error ? 'has-error d-block' : 'no-error d-block')">Area Default</label>
                             <div v-if="v$.state.areadefault.$error" class="label-error">
                                 <Icon icon="ep:warning-filled" height="13" />
@@ -199,17 +196,17 @@
                             </div>
                         </div>
 
-                        <!-- <div class="fluid-form-input margin-top-10 width-95">
+                        <div class="fluid-form-input margin-top-10 width-95">
                             <input type="text" v-model="state.modadefault" id="modadefault" placeholder="Moda Default" min="0" class="fluid-input" :class="state.modadefault == '' ? (v$.state.modadefault.$error ? 'has-error' : '') : (v$.state.modadefault.$error ? 'has-error' : 'no-error')">
                             <label id="modadefault" for="modadefault" class="fluid-label" :class="state.modadefault == '' ? (v$.state.modadefault.$error ? 'has-error' : 'no-error') : (v$.state.modadefault.$error ? 'has-error d-block' : 'no-error d-block')">Moda Default</label>
                             <div v-if="v$.state.modadefault.$error" class="label-error">
                                 <Icon icon="ep:warning-filled" height="13" />
                                 <p class="error-text">{{ v$.state.modadefault.$errors[0].$message }}</p>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
 
-                    <!-- <div class="display-flex">
+                    <div class="display-flex">
                         <input type="checkbox" name="Senin" id="senin">
                         <label class="label-weekly" for="senin"> Senin</label>
                         <input type="checkbox" name="Selasa" id="selasa">
@@ -226,7 +223,7 @@
                         <label class="label-weekly" for="sabtu"> Sabtu</label>
                         <input type="checkbox" name="Minggu" id="minggu">
                         <label class="label-weekly" for="minggu"> Minggu</label>
-                    </div> -->
+                    </div>
 
                     
                     
@@ -250,7 +247,6 @@ export default {
             bussList: [],
             statList: [],
             salesList: [],
-            areaDef:[],
 			beHostForm: false,
             v$: useValidate(),
 			hostCode: "",
@@ -270,10 +266,10 @@ export default {
                 oto:'',
                 conperson: this.$parent.dataClicked.CustomerSales,
                 jabatan: this.$parent.dataClicked.CustomerPersonJabat1,
-                telpon: this.$parent.dataClicked.CustomerPersonTelp1,
+                telpon:'',
                 komisi: this.$parent.dataClicked.CustomerPersonRC1,
                 catatan: this.$parent.dataClicked.CustomerMemo,
-                areadefault: this.$parent.dataClicked.CustomerAreaDefault,
+                areadefault: this.$parent.dataClicked.CustomerPickupArea,
                 modadefault: this.$parent.dataClicked.CustomerPickupModa
             }
 		}
@@ -287,12 +283,11 @@ export default {
                 nama: {
                     required: helpers.withMessage("Nama harus diisi", required),
                 },
-                // email: {
-                //     required: helpers.withMessage("Email harus diisi", required),
-                // },
+                email: {
+                    required: helpers.withMessage("Email harus diisi", required),
+                },
                 nohp: {
                     required: helpers.withMessage("No Telpon harus diisi", required),
-                    numeric: helpers.withMessage("No Telpon harus berupa angka", numeric),
                 },
                 alamat: {
                     required: helpers.withMessage("Alamat harus diisi", required),
@@ -300,28 +295,32 @@ export default {
                 kategori: {
                     required: helpers.withMessage("Kategori harus diisi", required),
                 },
-                // bisnis: {
-                //     required: helpers.withMessage("Bisnis harus diisi", required),
-                // },
+                bisnis: {
+                    required: helpers.withMessage("Bisnis harus diisi", required),
+                },
                 sales: {
                     required: helpers.withMessage("Sales harus diisi", required),
                 },
-                // oto: {
-                //     required: helpers.withMessage("Hitung Oto harus diisi", required),
-                // },
-                // conperson: {
-                //     required: helpers.withMessage("Contact Person harus diisi", required),
-                // },
+                lokasi: {
+                    required: helpers.withMessage("Lokasi harus diisi", required),
+                },
+                grup: {
+                    required: helpers.withMessage("Grup harus diisi", required),
+                },
+                oto: {
+                    required: helpers.withMessage("Hitung Oto harus diisi", required),
+                },
+                conperson: {
+                    required: helpers.withMessage("Contact Person harus diisi", required),
+                },
                 jabatan: {
                     required: helpers.withMessage("Jabatan harus diisi", required),
                 },
                 telpon: {
                     required: helpers.withMessage("Telepon harus diisi", required),
-                    numeric: helpers.withMessage("No Telpon harus berupa angka", numeric),
                 },
                 komisi: {
                     required: helpers.withMessage("Komisi harus diisi", required),
-                    numeric: helpers.withMessage("No Telpon harus berupa angka", numeric),
                 },
                 catatan: {
                     required: helpers.withMessage("Catatan harus diisi", required),
@@ -329,9 +328,9 @@ export default {
                 areadefault: {
                     required: helpers.withMessage("Area harus diisi", required),
                 },
-                // modadefault: {
-                //     required: helpers.withMessage("Moda harus diisi", required),
-                // }
+                modadefault: {
+                    required: helpers.withMessage("Moda harus diisi", required),
+                }
                 
             }
 		}
@@ -341,16 +340,10 @@ export default {
         await this.getBussinesList()
         await this.getLocationList()
         await this.getSalesList()
-        await this.areaPickup()
 		console.debug('dataaaa child',this.$parent.dataClicked)
 		this.data = this.$parent.dataClicked
 	},
 	methods: {
-        async areaPickup(){
-            const res =  await this.$store.dispatch('pelanggan/areaPickup',{key: 'psb75'})
-            this.areaDef = res.data
-            console.debug('areaPickup',res)
-        },
        async submitData() {
             this.v$.$validate()
             console.error('cons',this.v$.$error)

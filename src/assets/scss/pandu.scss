@@ -717,3 +717,23 @@ form {
 .sidebar-active {
     background: rgba(255,255,255,.05);
 }
+.margin-5 {
+    margin: 5px;
+}
+.margin-left-13 {
+    margin-left: 20px;
+}
+
+.popup-kota {
+    position: absolute;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+    padding: 20px;
+    max-width: 62%;
+    width: 37%;
+    /* height: 85%; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}

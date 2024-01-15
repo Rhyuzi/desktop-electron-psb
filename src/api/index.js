@@ -87,7 +87,7 @@ export default {
     },
     add_customer: async function (payload) {
         //DEFINE API ENDPOINT
-        let endpoint = 'siapx/desktop/save_cust.php';
+        let endpoint = 'siapx/desktop-new/save_cust.php';
         let method = 'post';
     
         //SEND API
@@ -114,6 +114,19 @@ export default {
     get_kota: async function (payload) {
         //DEFINE API ENDPOINT
         let endpoint = 'siapx/desktop-new/get_kota.php';
+        let method = 'post';
+    
+        //SEND API
+        endpoint = endpoint;
+        let result = await send_api(endpoint, method, payload);
+    
+        //RESULT PROCESS
+        return result;
+
+    },
+    area_pickup: async function (payload) {
+        //DEFINE API ENDPOINT
+        let endpoint = 'siapx/desktop-new/area_pickup.php';
         let method = 'post';
     
         //SEND API

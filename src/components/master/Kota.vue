@@ -7,7 +7,7 @@
          <button class="btn btn-primary height-38">
             <i class="fas fa-search"></i>
          </button>
-          <input v-model="search" @input="handleSearchChange" type="search" id="form1" class="form-control height-38" placeholder="Search Pelanggan ..."/>
+          <input v-model="search" @input="handleSearchChange" type="search" id="form1" class="form-control height-38" placeholder="Search Kota ..."/>
           <!-- <input type="search" v-model="search"> -->
             <!-- <i class="fas fa-search"></i> -->
           <button @click="onCreatePelanggan" class="btn btn-success height-38">
@@ -27,7 +27,6 @@
         >
         <template #item-operation="{ item }">
             <div>
-                <button @click="handleDetailClick" class="btn btn-primary font-size-13 margin-4"><Icon icon="bx:detail" />Detail</button>
                 <button @click="handleEditClick" class="btn btn-primary font-size-13 margin-4"><Icon icon="tabler:edit" />Edit</button>
             </div>
         </template>
@@ -42,8 +41,8 @@
     </div>
 
     <PopupInfoRapat v-if="isPopupShow"/>
-    <PopupTambahPelanggan v-if="onCreate" />
-    <PopupEditPelanggan v-if="onEdit"/>
+    <PopupTambahKota v-if="onCreate" />
+    <PopupEditKota v-if="onEdit"/>
     
     <!-- <PreJoinLoad/> -->
     <!-- <div class="popup-data-pelanggan">
@@ -56,9 +55,9 @@ import { Icon } from '@iconify/vue';
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
 import PopupInfoRapat from '../meetings/PopupInfoRapat.vue';
-import PopupTambahPelanggan from '../popups/master_pelanggan/PopupTambahPelanggan.vue';
+import PopupTambahKota from '../popups/master_kota/PopupTambahKota.vue';
 import PreJoinLoad from '../meetings/PreJoinLoad.vue';
-import PopupEditPelanggan from '../popups/master_pelanggan/PopupEditPelanggan.vue';
+import PopupEditKota from '../popups/master_kota/PopupEditKota.vue';
 import { mapGetters } from 'vuex';
 
   export default {
@@ -66,9 +65,9 @@ import { mapGetters } from 'vuex';
       Icon,
       Vue3EasyDataTable,
       PopupInfoRapat,
-      PopupTambahPelanggan,
+      PopupTambahKota,
       PreJoinLoad,
-      PopupEditPelanggan
+      PopupEditKota
   },
     computed: {
       ...mapGetters({

@@ -36,7 +36,7 @@ export default {
         getLocation: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.get_location(payload)
-                if (res.data.error = false) {
+                if (res.data.error == false) {
                     resolve(res.data)
                 }
                resolve(res.data)
@@ -45,7 +45,7 @@ export default {
         getBussinesList: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.get_pelanggan_bisnis(payload)
-                if (res.data.error = false) {
+                if (res.data.error == false) {
                     resolve(res.data)
                 }
                resolve(res.data)
@@ -54,7 +54,7 @@ export default {
         getSalesList: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.get_pelanggan_sales(payload)
-                if (res.data.error = false) {
+                if (res.data.error == false) {
                     resolve(res.data)
                 }
                resolve(res.data)
@@ -63,7 +63,7 @@ export default {
         getStatusList: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.get_pelanggan_status(payload)
-                if (res.data.error = false) {
+                if (res.data.error == false) {
                     resolve(res.data)
                 }
                resolve(res.data)
@@ -72,16 +72,26 @@ export default {
         addCustomer: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.add_customer(payload)
-                if (res.data.error = false) {
+                if (res.data.error == false) {
                     resolve(res.data)
                 }
                resolve(res.data)
             })
         },
+        areaPickup: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.area_pickup(payload)
+                if (res.data.error == false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
+
         updateCustomer: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.update_customer(payload)
-                if (res.data.error = false) {
+                if (res.data.error == false) {
                     resolve(res.data)
                 }
                resolve(res.data)
