@@ -363,11 +363,11 @@ export default {
             if (!this.v$.$error) {
                 const res = await this.$store.dispatch('pelanggan/addCustomer', this.state)
                 if (res.error == false) {
-                    this.toast(res.message, 'bg-more-black', 3000)
+                    this.toast(res.message, 'bg-light-green', 3000)
                     this.$parent.onCreate = false
                 }
                 else {
-                    this.toast(res.message, 'bg-more-black', 3000)
+                    this.toast(res.message, 'bg-red', 3000)
                 }
                 console.debug('res',res)
             }
