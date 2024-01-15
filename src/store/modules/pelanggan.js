@@ -78,6 +78,15 @@ export default {
                resolve(res.data)
             })
         },
+        updateCustomer: async function({commit}, payload) {
+            return new Promise(async (resolve, reject) => {
+                const res = await API.update_customer(payload)
+                if (res.data.error == false) {
+                    resolve(res.data)
+                }
+               resolve(res.data)
+            })
+        },
         areaPickup: async function({commit}, payload) {
             return new Promise(async (resolve, reject) => {
                 const res = await API.area_pickup(payload)

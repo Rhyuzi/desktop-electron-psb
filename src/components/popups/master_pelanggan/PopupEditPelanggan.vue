@@ -355,20 +355,7 @@ export default {
             this.v$.$validate()
             console.error('cons',this.v$.$error)
             if (!this.v$.$error) {
-                const param = {
-                    accno: this.state.accno,
-                    nama: this.state.nama,
-                    email: this.state.email,
-                    nohp: this.state.nohp,
-                    alamat: this.state.alamat,
-                    kategori: this.state.kategori,
-                    bisnis: this.state.bisnis,
-                    sales: this.state.sales,
-                    lokasi: this.state.lokasi,
-                    user: "AMIR SYAH",
-                    cloc: "7669"
-                }
-                const res = await this.$store.dispatch('pelanggan/addCustomer', param)
+                const res = await this.$store.dispatch('pelanggan/updateCustomer', this.state)
                 if (res.error == false) {
                     this.toast(res.message, 'bg-more-black', 3000)
                     this.$parent.onEdit = false

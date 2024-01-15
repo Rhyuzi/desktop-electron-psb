@@ -44,7 +44,6 @@
     <PopupTambahKota v-if="onCreate" />
     <PopupEditKota v-if="onEdit"/>
     
-    <!-- <PreJoinLoad/> -->
     <!-- <div class="popup-data-pelanggan">
       asdasdas
     </div> -->
@@ -54,9 +53,7 @@
 import { Icon } from '@iconify/vue';
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
-import PopupInfoRapat from '../meetings/PopupInfoRapat.vue';
 import PopupTambahKota from '../popups/master_kota/PopupTambahKota.vue';
-import PreJoinLoad from '../meetings/PreJoinLoad.vue';
 import PopupEditKota from '../popups/master_kota/PopupEditKota.vue';
 import { mapGetters } from 'vuex';
 
@@ -64,9 +61,7 @@ import { mapGetters } from 'vuex';
     components: {
       Icon,
       Vue3EasyDataTable,
-      PopupInfoRapat,
       PopupTambahKota,
-      PreJoinLoad,
       PopupEditKota
   },
     computed: {

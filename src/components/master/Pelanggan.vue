@@ -42,11 +42,10 @@
       </Vue3EasyDataTable>
     </div>
 
-    <PopupInfoRapat v-if="isPopupShow"/>
+    <PopupDetailPelanggan v-if="isPopupShow"/>
     <PopupTambahPelanggan v-if="onCreate" />
     <PopupEditPelanggan v-if="onEdit"/>
     
-    <!-- <PreJoinLoad/> -->
     <!-- <div class="popup-data-pelanggan">
       asdasdas
     </div> -->
@@ -56,20 +55,18 @@
 import { Icon } from '@iconify/vue';
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
-import PopupInfoRapat from '../meetings/PopupInfoRapat.vue';
+import PopupDetailPelanggan from '../popups/master_pelanggan/PopupDetailPelanggan.vue';
 import PopupTambahPelanggan from '../popups/master_pelanggan/PopupTambahPelanggan.vue';
-import PreJoinLoad from '../meetings/PreJoinLoad.vue';
 import PopupEditPelanggan from '../popups/master_pelanggan/PopupEditPelanggan.vue';
 import { mapGetters } from 'vuex';
 
   export default {
     components: {
       Icon,
+      PopupDetailPelanggan,
+      PopupEditPelanggan,
       Vue3EasyDataTable,
-      PopupInfoRapat,
-      PopupTambahPelanggan,
-      PreJoinLoad,
-      PopupEditPelanggan
+      PopupTambahPelanggan
   },
     computed: {
       ...mapGetters({

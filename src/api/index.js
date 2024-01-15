@@ -100,7 +100,7 @@ export default {
     },
     update_customer: async function (payload) {
         //DEFINE API ENDPOINT
-        let endpoint = 'siapx/desktop/update_cust.php';
+        let endpoint = 'siapx/desktop-new/update_cust.php';
         let method = 'post';
     
         //SEND API

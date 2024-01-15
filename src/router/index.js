@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
-import Loading from '../components/meetings/PreJoinLoad'
 
 const routes = [{
         path: '/',
@@ -19,11 +18,6 @@ const routes = [{
         name: 'Dashboard',
         component: Dashboard
     },
-    {
-        path: '/ruangrapat',
-        name: 'RuangRapat',
-        component: () => import('../views/RuangRapat.vue')
-    }
 ]
 
 const router = createRouter({

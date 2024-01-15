@@ -43,9 +43,8 @@
 import useValidate from '@vuelidate/core'
 import { Icon } from '@iconify/vue'
 import { required, numeric, maxLength, helpers, email } from '@vuelidate/validators'
-import PreJoinLoad from '../components/meetings/PreJoinLoad.vue'
 export default {
-	components: { Icon, PreJoinLoad },
+	components: { Icon },
 	data() {
 		return {
 			showpassword: false,
