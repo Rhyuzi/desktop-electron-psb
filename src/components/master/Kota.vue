@@ -94,7 +94,7 @@ import { mapGetters } from 'vuex';
         dataCity: [],
         headers: [
             { text: "CityID", value: "CityId", sortable: true },
-            { text: "CityCode", value: "CityCode", sortable: true},
+            { text: "CityCode", value: "CityCode", sortable: true},                                 
             { text: "CityForward", value: "CityForward"},
             { text: "CityName", value: "CityName"},
             { text: "CityCountry", value: "CityCountry"},

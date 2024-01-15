@@ -42,10 +42,27 @@ import Kota from '../components/master/Kota.vue';
       return {
         sidebarActive: true,
         toPelanggan: false,
-        toKota: true
+        toKota: false
       };
     },
+    mounted() {
+      this.layoutActive()
+    },
     methods: {
+      layoutActive() {
+        switch (location.search) {
+          case '?master=pelanggan':
+              this.toPelanggan = true
+              console.error(location.search)
+            break;
+          case '?master=kota':
+              this.toKota = true
+              console.error(location.search)
+            break;
+          default:
+            break;
+        }
+      },
       toggleSidebar() {
         if (this.sidebarActive) {
           // sidebar

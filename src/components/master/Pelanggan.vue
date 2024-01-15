@@ -73,7 +73,7 @@ import { mapGetters } from 'vuex';
   },
     computed: {
       ...mapGetters({
-          pelanggan: 'pelanggan/getPelanggans',
+          pelanggan: 'pelanggan/getPelanggan',
       }),
     },
     data() {
